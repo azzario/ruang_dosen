@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css?family=Open+Sans|Dosis');
+@import url('https://fonts.googleapis.com/css?family=Open+Sans|Thasadith');
 
 body {
 	background-color: #f6fafb;
@@ -49,8 +50,39 @@ table {
 	font-family: 'Open Sans', sans-serif;
 }
 
-.wrap-table {
+.wrap-table, .wrap-profile {
 	border: 1px solid rgba(0,0,0,.125);
+}
+
+form .form-control {
+	border: 1px solid #eee;
+}
+
+form .form-control:focus {
+	border-color: #28a745;
+  	box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset, 0 0 8px rgba(126, 239, 104, 0.6);
+  	outline: 0 none;
+}
+
+/* Placeholder */
+.form-control::-webkit-input-placeholder {
+  font-family: 'Thasadith', sans-serif;
+}
+
+.form-control:-ms-input-placeholder {
+  font-family: 'Thasadith', sans-serif;
+}
+
+.form-control:-moz-placeholder {
+  font-family: 'Thasadith', sans-serif;
+}
+
+.form-control::-moz-placeholder {
+  font-family: 'Thasadith', sans-serif;
+}
+
+small {
+	font-family: 'Open Sans', sans-serif;
 }
 
 /*---Media Queries --*/

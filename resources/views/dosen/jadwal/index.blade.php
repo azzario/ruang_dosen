@@ -18,6 +18,16 @@
 				</div>
 			</div>
 			<div class="row mx-1">
+				{{-- Alert --}}
+				@if(Session::has('success'))
+					<div class="alert alert-success alert-dismissible fade show" role="alert">
+	  					<strong>Sukses!</strong> {{ Session::get('success') }}.
+					  	<button type="button" class="close" data-dismiss="alert" aria-label="Close">
+					    	<span aria-hidden="true">&times;</span>
+					  	</button>
+					</div>
+				@endif
+				{{-- End Alert --}}
 				<div class="col-md-12 rounded mb-2 py-3 bg-white wrap-table table-responsive">
 				@if($jadwal->count() > 0)
 					<table class="table">
@@ -36,11 +46,12 @@
 							<tr>
 								<td>{{ ++$i }}</td>
 								<td>{{ $data->label }}</td>
+								<td>{{ $data->kelas->nama_kelas }}</td>
 								<td>{{ $data->sks }}</td>
-								<td>30</td>
-								<td>Senin</td>
+								<td>{{ $data->hari }} {{ $data->jam_mulai }}</td>
 								<td>
 									<button class="btn btn-sm btn-outline-info">Detail</button>
+									<a href="{{ url('/jadwal/'.$data->id.'/edit/dosen') }}" class="btn btn-sm btn-outline-warning">Edit</a>
 									<button class="btn btn-sm btn-outline-danger">Hapus</button>
 								</td>
 							</tr>

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use App\MatkulDosen;
 
 class DosenPagesController extends Controller
 {
@@ -29,7 +30,9 @@ class DosenPagesController extends Controller
 
     public function getProfile()
     {
-    	return view('dosen.pages.profile');
+        $matkul_dosen = MatkulDosen::where('id_dosen', '=', Auth::user()->id)->get();
+
+    	return view('dosen.pages.profile', compact('matkul_dosen'));
     }
 
     public function getLogin()

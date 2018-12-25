@@ -12,4 +12,9 @@ class Kelas extends Model
     {
     	return $this->belongsTo('App\Prodi', 'id_prodi');
     }
+
+    public function jadwal()
+    {
+        return $this->hasMany('App\Jadwal', 'id_kelas');
+    }
 }

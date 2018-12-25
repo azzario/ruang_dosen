@@ -16,7 +16,7 @@ Route::get('/', 'DosenPagesController@getIndex');
 Route::get('/login/dosen', 'DosenPagesController@getLogin');
 Route::post('/login/dosen', 'DosenPagesController@doLogin');
 Route::get('/logout', 'DosenPagesController@doLogout');
-Route::get('/profil', 'DosenPagesController@getProfile');
+Route::get('/profil/dosen', 'DosenPagesController@getProfile');
 
 //Kelas Dosen
 Route::get('/kelas/dosen', 'KelasController@index');
@@ -24,3 +24,6 @@ Route::get('/kelas/dosen', 'KelasController@index');
 //Jadwal Dosen
 Route::get('/jadwal/dosen', 'JadwalController@index');
 Route::get('/jadwal/create/dosen', 'JadwalController@create');
+Route::post('/jadwal/store/dosen', 'JadwalController@store');
+Route::get('/jadwal/{jadwal}/edit/dosen', 'JadwalController@edit');
+Route::put('/jadwal/{jadwal}/update/dosen', 'JadwalController@update');

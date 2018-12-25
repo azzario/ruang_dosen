@@ -9,7 +9,7 @@
         <li class="nav-item {{ Request::is('/') ? 'active rounded' : '' }}">
           <a href="{{ url('/') }}" class="nav-link">Beranda</a>
         </li>
-        <li class="nav-item {{ (Request::is('jadwal/dosen') || Request::is('jadwal/create/dosen')) ? 'active rounded' : '' }}">
+        <li class="nav-item {{ (Request::is('jadwal/dosen') || Request::is('jadwal/create/dosen') || Request::is('jadwal/*/edit/dosen')) ? 'active rounded' : '' }}">
           <a href="{{ url('/jadwal/dosen') }}" class="nav-link">Jadwal</a>
         </li>
         <li class="nav-item {{ Request::is('kelas/dosen') ? 'active rounded' : '' }}">
@@ -22,9 +22,9 @@
           <a href="" class="nav-link">Materi</a>
         </li>
         <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">{{ strtok(Auth::user()->nama, ' ') }}</a>
+            <a class="nav-link dropdown-toggle {{ Request::is('profil/dosen') ? 'active text-white rounded' : '' }}" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">{{ strtok(Auth::user()->nama, ' ') }}</a>
             <div class="dropdown-menu">
-              <a class="dropdown-item" href="{{ url('/profil') }}">Profil</a>
+              <a class="dropdown-item" href="{{ url('/profil/dosen') }}">Profil</a>
               <div class="dropdown-divider"></div>
               <a class="dropdown-item" href="{{ url('/logout') }}">Logout</a>
             </div>
